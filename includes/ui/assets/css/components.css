@@ -1,0 +1,58 @@
+/* WPAuditor shared admin components */
+
+.wpa-status-badge,
+.wpa-severity-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 26px;
+    padding: 0 10px;
+    border: var(--wpa-component-border-width, 1px) solid var(--wpa-tone-neutral-border, #666);
+    border-radius: var(--wpa-component-radius-pill, 999px);
+    background: var(--wpa-tone-neutral-bg, #303030);
+    color: var(--wpa-tone-neutral-text, #eee);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.wpa-status-badge--success,
+.wpa-severity-badge--low {
+    border-color: var(--wpa-tone-success-border);
+    background: var(--wpa-tone-success-bg);
+    color: var(--wpa-tone-success-text);
+}
+
+.wpa-status-badge--warning,
+.wpa-severity-badge--medium {
+    border-color: var(--wpa-tone-warning-border);
+    background: var(--wpa-tone-warning-bg);
+    color: var(--wpa-tone-warning-text);
+}
+
+.wpa-status-badge--danger,
+.wpa-severity-badge--critical {
+    border-color: var(--wpa-tone-danger-border);
+    background: var(--wpa-tone-danger-bg);
+    color: var(--wpa-tone-danger-text);
+}
+
+.wpa-status-badge--info,
+.wpa-severity-badge--info {
+    border-color: var(--wpa-tone-info-border);
+    background: var(--wpa-tone-info-bg);
+    color: var(--wpa-tone-info-text);
+}
+
+.wpa-status-badge--neutral {
+    border-color: var(--wpa-tone-neutral-border);
+    background: var(--wpa-tone-neutral-bg);
+    color: var(--wpa-tone-neutral-text);
+}
+
+.wpa-severity-badge--high {
+    border-color: var(--wpa-tone-high-border);
+    background: var(--wpa-tone-high-bg);
+    color: var(--wpa-tone-high-text);
+}

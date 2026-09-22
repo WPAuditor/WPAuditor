@@ -1,0 +1,740 @@
+/* WPAuditor per-user Light and Dark theme controls */
+
+.wpa-theme-control {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.wpa-theme-toggle:disabled {
+    cursor: wait;
+    opacity: .72;
+}
+
+.wpa-theme-icon,
+.wpa-theme-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.wpa-theme-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wpa-theme-icon svg {
+    display: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.wpa-theme-control[data-theme="light"] .wpa-theme-icon-sun,
+.wpa-theme-control[data-theme="dark"] .wpa-theme-icon-moon {
+    display: block;
+}
+
+/* WordPress 7.x-inspired Light theme */
+body.wpauditor-admin-page.wpauditor-theme-light {
+    --wpa-admin-bg: #f0f0f1;
+    --wpa-admin-surface: #fff;
+    --wpa-admin-surface-raised: #fff;
+    --wpa-admin-surface-soft: #f6f7f7;
+    --wpa-admin-border: #c3c4c7;
+    --wpa-admin-border-soft: #dcdcde;
+    --wpa-admin-text: #1d2327;
+    --wpa-admin-muted: #646970;
+    --wpa-admin-blue: #3858e9;
+    --wpa-admin-blue-deep: #eef0ff;
+    --wpa-admin-green: #008a20;
+    --wpa-admin-orange: #b26200;
+    --wpa-admin-red: #d63638;
+    color-scheme: light;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard {
+    --wpa-soc-bg: #f0f0f1;
+    --wpa-soc-surface: #fff;
+    --wpa-soc-surface-raised: #fff;
+    --wpa-soc-surface-soft: #f6f7f7;
+    --wpa-soc-border: #c3c4c7;
+    --wpa-soc-border-soft: #dcdcde;
+    --wpa-soc-text: #1d2327;
+    --wpa-soc-muted: #646970;
+    --wpa-soc-blue: #3858e9;
+    --wpa-soc-cyan: #3858e9;
+    --wpa-soc-red: #d63638;
+    --wpa-soc-orange: #b26200;
+    --wpa-soc-green: #008a20;
+    color-scheme: light;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light,
+body.wpauditor-admin-page.wpauditor-theme-light #wpcontent,
+body.wpauditor-admin-page.wpauditor-theme-light #wpbody,
+body.wpauditor-admin-page.wpauditor-theme-light #wpbody-content,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard {
+    background: var(--wpa-admin-bg);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard {
+    color: var(--wpa-soc-text);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard a {
+    color: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard a:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard a:focus {
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-page-title,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-live,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-metric-value,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-metric-context {
+    color: var(--wpa-soc-text);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-live-monitoring-badge {
+    background: #eef0ff;
+    color: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-header-icon-button {
+    border-color: #c3c4c7;
+    background: #fff;
+    color: #646970;
+    box-shadow: 0 1px 2px rgba(29, 35, 39, .08);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-header-icon-button:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-header-icon-button:focus-visible,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-center.is-open .wpa-header-icon-button {
+    border-color: #3858e9;
+    background: #eef0ff;
+    color: #1d2327;
+    box-shadow: 0 0 0 3px rgba(56, 88, 233, .14);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-panel {
+    box-shadow: 0 18px 45px rgba(29, 35, 39, .18);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-mark-read:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-mark-read:focus-visible {
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-mark-read:disabled,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-clear:disabled {
+    color: #8c8f94;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-severity {
+    background: #fff3e8;
+    color: #8a4b00;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-card-critical .wpa-notification-severity {
+    background: #fcf0f1;
+    color: #b32d2e;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-repeat {
+    color: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-target,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-target code {
+    color: #3c434a;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-technical summary {
+    color: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-notification-technical code {
+    border-color: #c3c4c7;
+    background: #f0f0f1;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-dashboard-filter-field select {
+    border-color: #8c8f94;
+    background: #fff;
+    color: #1d2327;
+    color-scheme: light;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-dashboard-filter-field select:hover {
+    border-color: #3858e9;
+    background: #fff;
+    color: #1d2327;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-ai-fab {
+    border-color: #3858e9;
+    background: #3858e9;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-ai-fab:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-ai-fab:focus {
+    border-color: #2846cc;
+    background: #2846cc;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-ai-inline-result {
+    border-color: #c3c4c7;
+    background: #f6f7f7;
+    color: #1d2327;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-ai-report-meta {
+    color: #50575e;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-status-mood-form .wpa-mood-switch {
+    border-color: #c3c4c7;
+    background: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-mood-option-text {
+    color: #50575e;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-mood-option input:checked + .wpa-mood-option-text {
+    background: #3858e9;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(56, 88, 233, .2);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-soc-metric {
+    border: 1px solid var(--wpa-soc-border-soft);
+    box-shadow: 0 1px 2px rgba(29, 35, 39, .06);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-soc-metric-priority .wpa-soc-metric-dot {
+    background: #b26200;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-soc-metric-attackers .wpa-soc-metric-dot {
+    background: #008a20;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-soc-metric-blocked .wpa-soc-metric-dot {
+    background: #7047a3;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-chart-head > a:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-reference-panel-head > a:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-chart-head > a:focus,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-reference-panel-head > a:focus {
+    background: #eef0ff;
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-ipintel-ip,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-targeted-endpoint-row code,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-recent-event code {
+    background: #f0f0f1;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-ipintel-count {
+    background: #eef0ff;
+    color: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-empty-state {
+    border-color: #c3c4c7;
+    background: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-soc-dashboard .wpa-recent-events-head .button {
+    border-color: #8c8f94;
+    background: #fff;
+    color: #1d2327;
+}
+
+/* Shared Light shell components */
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) > h1:first-of-type::after,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-security-events-header > h1:first-of-type::after,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-timeline-header > h1:first-of-type::after {
+    background: #eef0ff;
+    color: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) a:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) a:focus {
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) code,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) kbd {
+    background: #f0f0f1;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) pre {
+    background: #f6f7f7;
+    color: #1d2327;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-ai-result,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-ai-inline-result,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-ai-log-result,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-ai-session-result {
+    background: #f6f7f7;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) input:not([type="hidden"]):not([type="submit"]):not([type="button"]),
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) select,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) textarea {
+    border-color: #8c8f94;
+    background: #fff;
+    color: #2c3338;
+    color-scheme: light;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) input[type="checkbox"]:not(:disabled):checked {
+    border-color: var(--wp-admin-theme-color, #3858e9);
+    background: var(--wp-admin-theme-color, #3858e9);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) input:disabled,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) select:disabled,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) textarea:disabled {
+    border-color: #dcdcde;
+    background: #f0f0f1;
+    color: #8c8f94;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-secondary,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-delete {
+    border-color: #8c8f94;
+    background: #fff;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button:focus,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-secondary:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-secondary:focus {
+    border-color: #3858e9;
+    background: #f6f7f7;
+    color: #1d2327;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-primary {
+    border-color: #3858e9;
+    background: #3858e9;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-primary:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-primary:focus {
+    border-color: #2846cc;
+    background: #2846cc;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-active-defense-page .wpa-advanced-button {
+    border-color: #8c8f94;
+    background: #fff;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-active-defense-page .wpa-advanced-button:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-active-defense-page .wpa-advanced-button:focus-visible {
+    border-color: #3858e9;
+    background: #eef0ff;
+    color: #1d2327;
+    outline: none;
+    box-shadow: 0 0 0 1px #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-danger,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .button-delete {
+    border-color: #d63638;
+    background: #fcf0f1;
+    color: #b32d2e;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-quarantine-page #wpa-btn-restore {
+    border-color: #3858e9;
+    background: #3858e9;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-quarantine-page #wpa-btn-restore:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-quarantine-page #wpa-btn-restore:focus {
+    border-color: #2846cc;
+    background: #2846cc;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-quarantine-page #wpa-btn-delete {
+    border-color: #d63638;
+    background: #d63638;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-quarantine-page #wpa-btn-delete:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-quarantine-page #wpa-btn-delete:focus {
+    border-color: #b32d2e;
+    background: #b32d2e;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .form-table th {
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) table.widefat,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wp-list-table,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-table-wrap,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) table.widefat tbody tr,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wp-list-table tbody tr {
+    background: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) table.widefat thead th,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) table.widefat tfoot th,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wp-list-table thead th,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wp-list-table tfoot th {
+    background: #f6f7f7;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) table.widefat.striped > tbody > :nth-child(odd),
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wp-list-table.striped > tbody > :nth-child(odd) {
+    background: #f6f7f7;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) table.widefat tbody tr:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wp-list-table tbody tr:hover {
+    background: #eef0ff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable {
+    border-color: #c3c4c7;
+    background: #fff;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable > thead > tr > th,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable > tfoot > tr > th {
+    border-color: #c3c4c7;
+    background: #f6f7f7;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable > tbody > tr {
+    background: #fff;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable.striped > tbody > :nth-child(odd) {
+    background: #f6f7f7;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable > tbody > tr:hover {
+    background: #eef0ff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable > tbody > tr > td {
+    border-color: #dcdcde;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-quarantine-page #wpa-qtable code {
+    background: #f0f0f1;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .tablenav-pages a,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .tablenav-pages .tablenav-pages-navspan,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .tablenav-pages .current,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .tablenav-pages .wpa-page-current,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .nav-tab,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) details,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-signal-count-badge,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-geo,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-chip {
+    border-color: #c3c4c7;
+    background: #fff;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .tablenav-pages .current,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .tablenav-pages .wpa-page-current,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-chip-active,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-chip:hover {
+    border-color: #3858e9;
+    background: #eef0ff;
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .nav-tab:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .nav-tab:focus,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .nav-tab-active,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .nav-tab-active:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .nav-tab-active:focus {
+    background: #f6f7f7;
+    color: #1d2327;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-progress-track {
+    background: #dcdcde;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-progress-bar {
+    background: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-sim-console,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell:not(.wpa-soc-dashboard) .wpa-console-body {
+    background: #1d2327;
+    color: #f6f7f7;
+}
+
+/* Light variants for investigation and response controls */
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-filter-context a {
+    color: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-event-count-card:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-event-count-card:focus {
+    border-color: #8c8f94;
+    border-left-color: var(--wpa-event-count-accent, var(--wpa-admin-blue));
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-event-count-card span {
+    color: #646970;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-event-count-accent-blue {
+    --wpa-event-count-accent: #3858e9;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-event-count-accent-red {
+    --wpa-event-count-accent: #d63638;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-event-count-accent-orange {
+    --wpa-event-count-accent: #b26200;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-event-count-accent-green {
+    --wpa-event-count-accent: #008a20;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-expand-row,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-expand-box {
+    background: #f6f7f7;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-action-icon-btn,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-action-icon-btn {
+    color: #50575e !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-action-icon-btn {
+    border-color: rgba(29, 35, 39, .05) !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-action-icon-btn:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-action-icon-btn:focus,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-action-icon-btn:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-action-icon-btn:focus {
+    color: #1d2327 !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-action-icon-btn:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-action-icon-btn:focus {
+    border-color: rgba(29, 35, 39, .08) !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-action-icon-btn:focus-visible,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-action-icon-btn:focus-visible {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px rgba(56, 88, 233, .55) !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-ai-explain-btn {
+    border-color: rgba(56, 88, 233, .45) !important;
+    color: #3858e9 !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-security-events-page .wpa-ai-explain-btn {
+    border-color: rgba(56, 88, 233, .05) !important;
+    color: #3858e9 !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-expand-btn {
+    border-color: rgba(29, 35, 39, .05) !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-expand-btn:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-expand-btn:focus {
+    border-color: rgba(29, 35, 39, .08) !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-ai-explain-btn {
+    border-color: rgba(56, 88, 233, .05) !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-ai-explain-btn:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .wpa-ai-explain-btn:focus {
+    border-color: rgba(56, 88, 233, .08) !important;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog {
+    background: rgba(29, 35, 39, .42);
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-body .wpa-confirm-dialog-note {
+    background: #eef0ff;
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-actions {
+    background: #f6f7f7;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple .wpa-confirm-dialog-cancel {
+    border-color: #8c8f94;
+    background: #fff;
+    color: #2c3338;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple .wpa-confirm-dialog-cancel:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple .wpa-confirm-dialog-cancel:focus {
+    border-color: #646970;
+    background: #f6f7f7;
+    color: #1d2327;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple[data-action="restore"] .wpa-confirm-dialog-confirm {
+    border-color: #3858e9;
+    background: #3858e9;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple[data-action="restore"] .wpa-confirm-dialog-confirm:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple[data-action="restore"] .wpa-confirm-dialog-confirm:focus {
+    border-color: #2846cc;
+    background: #2846cc;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple:not([data-action="restore"]) .wpa-confirm-dialog-confirm {
+    border-color: #d63638;
+    background: #d63638;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple:not([data-action="restore"]) .wpa-confirm-dialog-confirm:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-confirm-dialog-simple:not([data-action="restore"]) .wpa-confirm-dialog-confirm:focus {
+    border-color: #b32d2e;
+    background: #b32d2e;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-timeline-page .toggle-button {
+    border-color: #3858e9;
+    background: #eef0ff;
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-scanner-page .wpa-permission-risk,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-scanner-page .wpa-text-danger {
+    color: #b32d2e;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-scanner-page .wpa-signal-count-badge {
+    background: #f0f0f1;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-backup-empty {
+    border-color: #c3c4c7;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-backup-expiry {
+    border-color: #dba617;
+    background: #fcf9e8;
+    color: #695000;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-password-strength-track {
+    background: #dcdcde;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpauditor-admin-page .wpa-admin-shell .wpa-button,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .wpa-button,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .button:not(.button-small):not(.button-delete):not(.button-danger):not(.wpa-action-icon-btn) {
+    border-color: #3858e9;
+    background: #3858e9;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .wpa-button:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .wpa-button:focus,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .button:not(.button-small):not(.button-delete):not(.button-danger):not(.wpa-action-icon-btn):hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .button:not(.button-small):not(.button-delete):not(.button-danger):not(.wpa-action-icon-btn):focus {
+    border-color: #2846cc;
+    background: #2846cc;
+    color: #fff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .wpa-button:focus,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .button:not(.button-small):not(.button-delete):not(.button-danger):not(.wpa-action-icon-btn):focus {
+    outline-color: #7b90ff;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .wpa-button:disabled,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .wpa-button.disabled,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .button:not(.button-small):not(.button-delete):not(.button-danger):not(.wpa-action-icon-btn):disabled,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell .button:not(.button-small):not(.button-delete):not(.button-danger):not(.wpa-action-icon-btn).disabled {
+    border-color: #c3c4c7;
+    background: #f0f0f1;
+    color: #8c8f94;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-suspicious-page table.widefat.wpa-scanner-table.striped > tbody > tr,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-suspicious-page table.widefat.wpa-scanner-table.striped > tbody > :nth-child(odd),
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-file-forensics-page table.widefat.wpa-forensics-table.striped > tbody > tr,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-file-forensics-page table.widefat.wpa-forensics-table.striped > tbody > :nth-child(odd),
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-monitoring-page table.widefat.wpa-forensics-table.striped > tbody > tr,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-monitoring-page table.widefat.wpa-forensics-table.striped > tbody > :nth-child(odd),
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-core-integrity-page table.widefat.wpa-forensics-table.striped > tbody > tr,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-core-integrity-page table.widefat.wpa-forensics-table.striped > tbody > :nth-child(odd),
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-file-forensics-page table.widefat.wpa-forensics-table.striped > tbody > tr:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-monitoring-page table.widefat.wpa-forensics-table.striped > tbody > tr:hover,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-admin-shell.wpa-core-integrity-page table.widefat.wpa-forensics-table.striped > tbody > tr:hover {
+    background: #f6f7f7;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-forensics-detector {
+    border-color: rgba(56, 88, 233, .35);
+    background: #eef0ff;
+    color: #2846cc;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-forensics-detector-sensitive {
+    border-color: #dba617;
+    background: #fcf9e8;
+    color: #695000;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-file-forensics-page .wpa-forensics-evidence > strong,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-monitoring-page .wpa-forensics-evidence > strong,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-file-forensics-page .wpa-forensics-evidence li,
+body.wpauditor-admin-page.wpauditor-theme-light .wpa-monitoring-page .wpa-forensics-evidence li {
+    color: #2c3338;
+}

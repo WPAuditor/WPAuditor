@@ -1,0 +1,45 @@
+/* WPAuditor shared design tokens */
+
+body.wpauditor-admin-page {
+    --wpa-component-radius-pill: 999px;
+    --wpa-component-border-width: 1px;
+    --wpa-tone-info-border: rgba(96, 165, 250, .3);
+    --wpa-tone-info-bg: rgba(96, 165, 250, .14);
+    --wpa-tone-info-text: #93c5fd;
+    --wpa-tone-success-border: rgba(74, 222, 128, .3);
+    --wpa-tone-success-bg: rgba(74, 222, 128, .13);
+    --wpa-tone-success-text: #4ade80;
+    --wpa-tone-warning-border: rgba(250, 204, 21, .32);
+    --wpa-tone-warning-bg: rgba(250, 204, 21, .13);
+    --wpa-tone-warning-text: #facc15;
+    --wpa-tone-danger-border: rgba(251, 113, 133, .34);
+    --wpa-tone-danger-bg: rgba(251, 113, 133, .14);
+    --wpa-tone-danger-text: #fb7185;
+    --wpa-tone-neutral-border: rgba(156, 163, 175, .32);
+    --wpa-tone-neutral-bg: rgba(156, 163, 175, .13);
+    --wpa-tone-neutral-text: #c4c9d1;
+    --wpa-tone-high-border: rgba(251, 146, 60, .34);
+    --wpa-tone-high-bg: rgba(251, 146, 60, .14);
+    --wpa-tone-high-text: #fb923c;
+}
+
+body.wpauditor-admin-page.wpauditor-theme-light {
+    --wpa-tone-info-border: rgba(56, 88, 233, .28);
+    --wpa-tone-info-bg: #eef0ff;
+    --wpa-tone-info-text: #2846cc;
+    --wpa-tone-success-border: rgba(0, 138, 32, .28);
+    --wpa-tone-success-bg: #edfaef;
+    --wpa-tone-success-text: #006b1a;
+    --wpa-tone-warning-border: rgba(153, 104, 0, .28);
+    --wpa-tone-warning-bg: #fcf9e8;
+    --wpa-tone-warning-text: #695000;
+    --wpa-tone-danger-border: rgba(214, 54, 56, .3);
+    --wpa-tone-danger-bg: #fcf0f1;
+    --wpa-tone-danger-text: #b32d2e;
+    --wpa-tone-neutral-border: #c3c4c7;
+    --wpa-tone-neutral-bg: #f6f7f7;
+    --wpa-tone-neutral-text: #50575e;
+    --wpa-tone-high-border: rgba(178, 98, 0, .3);
+    --wpa-tone-high-bg: #fff3e8;
+    --wpa-tone-high-text: #8a4b00;
+}
