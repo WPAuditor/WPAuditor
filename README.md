@@ -21,7 +21,8 @@
 <p align="center">
   <a href="https://wpauditor.app">Website</a> ·
   <a href="https://wpauditor.app/documentation.html">Documentation</a> ·
-  <a href="https://github.com/WPAuditor/wpauditor/releases/latest">Download</a> ·
+  <a href="https://github.com/WPAuditor/WPAuditor/releases/latest">Download Free</a> ·
+  <a href="https://wpauditor.app/plans.html">Get Pro</a> ·
   <a href="SECURITY.md">Security policy</a>
 </p>
 
@@ -29,9 +30,9 @@
 
 ## WordPress security visibility in one dashboard
 
-WPAuditor helps administrators understand what is happening on a WordPress site. It records important activity locally, highlights suspicious requests, verifies WordPress core files, investigates potentially unsafe files, and provides controlled response and hardening tools.
+This repository contains **WPAuditor Free**, the open-source WordPress security plugin. It helps administrators understand what is happening on a site by recording important activity locally, highlighting suspicious requests, verifying WordPress core files, investigating potentially unsafe files, and providing controlled response and hardening tools.
 
-The free edition works without a WPAuditor account, license key, telemetry service, or external security dashboard.
+WPAuditor Free works without an account, license key, telemetry service, or external security dashboard. **WPAuditor Pro** is available separately for users who need the additional capabilities described on the [plans page](https://wpauditor.app/plans.html). The Free and Pro editions cannot run at the same time; deactivate one edition before activating the other.
 
 ## Features
 
@@ -85,8 +86,6 @@ The free edition works without a WPAuditor account, license key, telemetry servi
 4. Select `wpauditor.zip`, install it, and activate **WPAuditor**.
 5. Open **WPAuditor → Settings** and verify logging, retention, and timezone preferences.
 6. Review the dashboard and run File Forensics and Core Integrity before enabling optional hardening controls.
-
-WPAuditor Free and WPAuditor Pro must not run simultaneously. Deactivate one edition before activating the other.
 
 ## What does WPAuditor monitor?
 
