@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/WPAuditor/wpauditor/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/WPAuditor/wpauditor?display_name=tag&sort=semver"></a>
+  <a href="https://github.com/WPAuditor/WPAuditor/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/WPAuditor/WPAuditor?display_name=tag&sort=semver"></a>
   <a href="LICENSE.txt"><img alt="GPL v2 or later" src="https://img.shields.io/badge/license-GPL--2.0%2B-3da639"></a>
   <img alt="WordPress 6.0 or later" src="https://img.shields.io/badge/WordPress-6.0%2B-21759b">
   <img alt="PHP 8.0 or later" src="https://img.shields.io/badge/PHP-8.0%2B-777bb4">
@@ -75,17 +75,24 @@ WPAuditor Free works without an account, license key, telemetry service, or exte
 - Write access to the WordPress content and uploads locations used for protected log and quarantine storage
 - Working WordPress scheduled events for automatic log retention
 - Outbound HTTPS access to WordPress.org for administrator-initiated core checksum scans
+- Outbound HTTPS access to GitHub for release checks and plugin updates
 
 ## Installation
 
 ### From a GitHub release
 
-1. Open the [latest release](https://github.com/WPAuditor/wpauditor/releases/latest).
+1. Open the [latest release](https://github.com/WPAuditor/WPAuditor/releases/latest).
 2. Download the attached `wpauditor.zip` package. Do not use GitHub's automatically generated source archive as the WordPress installer package.
 3. In WordPress, open **Plugins → Add New Plugin → Upload Plugin**.
 4. Select `wpauditor.zip`, install it, and activate **WPAuditor**.
 5. Open **WPAuditor → Settings** and verify logging, retention, and timezone preferences.
 6. Review the dashboard and run File Forensics and Core Integrity before enabling optional hardening controls.
+
+### Updates
+
+Starting with version 1.0.1, the GitHub-distributed edition checks WPAuditor's latest stable GitHub release and shows a normal WordPress update notice when a newer version and an attached `wpauditor.zip` are available. Site administrators can update from the Plugins screen or enable WordPress automatic updates. GitHub's generated source archives are not used for plugin updates.
+
+Version 1.0.0 does not contain this updater. Sites running 1.0.0 must install version 1.0.1 once using the ZIP upload steps above. Future releases must include a `wpauditor.zip` whose root is `wpauditor/` and whose `wpauditor.php` version matches the release tag.
 
 ## What does WPAuditor monitor?
 
@@ -108,7 +115,9 @@ WPAuditor contacts the official WordPress.org Core Checksum API only when an aut
 - Service: `https://api.wordpress.org/core/checksums/1.0/`
 - [WordPress.org privacy policy](https://wordpress.org/about/privacy/)
 
-The free edition does not include analytics, telemetry, advertising, license callbacks, AI-provider connections, Cloudflare synchronization, or an external plugin updater.
+The GitHub-distributed edition also requests the latest public release information from `https://api.github.com/repos/WPAuditor/WPAuditor/releases/latest` during WordPress update checks. When an update is installed, WordPress downloads the attached ZIP from GitHub. GitHub receives ordinary connection information such as the server IP address and HTTP headers. WPAuditor does not send event logs, scan findings, license keys, or account data with these requests.
+
+The free edition does not include analytics, telemetry, advertising, license callbacks, AI-provider connections, or Cloudflare synchronization.
 
 ## Responsible use
 
@@ -124,7 +133,7 @@ Please do not disclose suspected vulnerabilities in a public issue. Follow the p
 
 ## Support and contributions
 
-Use [GitHub Issues](https://github.com/WPAuditor/wpauditor/issues) for reproducible bugs and feature requests that do not contain sensitive security information. Include the WPAuditor version, WordPress version, PHP version, relevant steps, and sanitized diagnostic details.
+Use [GitHub Issues](https://github.com/WPAuditor/WPAuditor/issues) for reproducible bugs and feature requests that do not contain sensitive security information. Include the WPAuditor version, WordPress version, PHP version, relevant steps, and sanitized diagnostic details.
 
 Contributions should be focused, documented, and compatible with the WordPress coding and security practices used by the project. A dedicated contribution guide may be added as the public development workflow grows.
 
