@@ -4,7 +4,7 @@
 /**
  * Plugin Name: WPAuditor
  * Description: The security visibility layer for WordPress. Logs activity, detects basic threats, checks core integrity, and provides file forensics, quarantine, and login/API hardening.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.0
  * Requires PHP: 8.0
  * Author: WPAuditor
@@ -12,6 +12,7 @@
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wpauditor
+ * Update URI: https://wpauditor.app/wpauditor-free
  */
 
 if (!defined('ABSPATH')) exit;
@@ -41,6 +42,85 @@ define('WPAUDITOR_MAIN_FILE', __FILE__);
 define('WPAUDITOR_USER_AGENT', 'WPAuditor Free (+https://wpauditor.app)');
 define('WPAUDITOR_MENU_ICON_URL', plugins_url('includes/ui/32x32.png', __FILE__));
 define('WPAUDITOR_ADMIN_ROWS_PER_PAGE', 50);
+
+// GitHub Releases supply updates for the separately distributed free edition.
+// The Update URI keeps WordPress.org plugins with a similar slug from replacing it.
+add_filter('update_plugins_wpauditor.app', function ($update, $plugin_data, $plugin_file) {
+    if ($plugin_file !== 'wpauditor/wpauditor.php'
+        || ($plugin_data['UpdateURI'] ?? '') !== 'https://wpauditor.app/wpauditor-free') {
+        return $update;
+    }
+
+    $cached = get_site_transient('wpauditor_free_github_release');
+    if ($cached === false) {
+        $cached = ['release' => false];
+        $response = wp_remote_get('https://api.github.com/repos/WPAuditor/WPAuditor/releases/latest', [
+            'timeout' => 8,
+            'headers' => [
+                'Accept' => 'application/vnd.github+json',
+                'User-Agent' => 'WPAuditor-Free-Updates/1.0.1 (+https://wpauditor.app)',
+                'X-GitHub-Api-Version' => '2022-11-28',
+            ],
+        ]);
+
+        if (!is_wp_error($response) && wp_remote_retrieve_response_code($response) === 200) {
+            $release = json_decode(wp_remote_retrieve_body($response), true);
+            if (is_array($release)
+                && empty($release['draft'])
+                && empty($release['prerelease'])
+                && isset($release['tag_name'], $release['assets'])
+                && is_string($release['tag_name'])
+                && is_array($release['assets'])
+                && preg_match('/^v?(\d+\.\d+\.\d+(?:\.\d+)?)$/', $release['tag_name'], $matches)) {
+                foreach ($release['assets'] as $asset) {
+                    if (!is_array($asset)
+                        || ($asset['name'] ?? '') !== 'wpauditor.zip'
+                        || ($asset['state'] ?? '') !== 'uploaded'
+                        || !is_string($asset['browser_download_url'] ?? null)) {
+                        continue;
+                    }
+
+                    $package = $asset['browser_download_url'];
+                    $parts = wp_parse_url($package);
+                    if (!is_array($parts)
+                        || ($parts['scheme'] ?? '') !== 'https'
+                        || ($parts['host'] ?? '') !== 'github.com'
+                        || strpos($parts['path'] ?? '', '/WPAuditor/WPAuditor/releases/download/') !== 0) {
+                        continue;
+                    }
+
+                    $cached['release'] = [
+                        'version' => $matches[1],
+                        'package' => $package,
+                        'url' => 'https://github.com/WPAuditor/WPAuditor/releases/tag/' . rawurlencode($release['tag_name']),
+                    ];
+                    break;
+                }
+            }
+        }
+
+        set_site_transient(
+            'wpauditor_free_github_release',
+            $cached,
+            $cached['release'] === false ? HOUR_IN_SECONDS : 6 * HOUR_IN_SECONDS
+        );
+    }
+
+    if (!is_array($cached)
+        || !is_array($cached['release'] ?? null)
+        || !version_compare($cached['release']['version'], $plugin_data['Version'], '>')) {
+        return $update;
+    }
+
+    return [
+        'slug' => 'wpauditor',
+        'version' => $cached['release']['version'],
+        'url' => $cached['release']['url'],
+        'package' => $cached['release']['package'],
+        'requires' => '6.0',
+        'requires_php' => '8.0',
+    ];
+}, 10, 3);
 
 $wpauditor_free_path = plugin_dir_path(__FILE__);
 require_once $wpauditor_free_path . 'includes/log-maintenance.php';
